@@ -3,7 +3,6 @@ site_name: EZtCloud文档中心
 plugins:
   - search
   - mermaid2
-  - include
 
 theme:
   language: zh
