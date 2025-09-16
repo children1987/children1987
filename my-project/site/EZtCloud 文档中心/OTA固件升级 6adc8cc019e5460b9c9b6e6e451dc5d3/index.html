@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+
+<html data-bs-theme="light" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="../../img/favicon.ico" rel="shortcut icon"/>
+<title>OTA固件升级 - EZtCloud</title>
+<link href="../../css/bootstrap.min.css" rel="stylesheet"/>
+<link href="../../css/fontawesome.min.css" rel="stylesheet"/>
+<link href="../../css/brands.min.css" rel="stylesheet"/>
+<link href="../../css/solid.min.css" rel="stylesheet"/>
+<link href="../../css/v4-font-face.min.css" rel="stylesheet"/>
+<link href="../../css/base.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" id="hljs-light" rel="stylesheet"/>
+<link disabled="" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" id="hljs-dark" rel="stylesheet"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+</head>
+<body>
+<div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+<div class="container">
+<a class="navbar-brand" href="../..">EZtCloud</a>
+<!-- Expander button -->
+<button aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-bs-target="#navbar-collapse" data-bs-toggle="collapse" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<!-- Expanded navigation -->
+<div class="navbar-collapse collapse" id="navbar-collapse">
+<!-- Main navigation -->
+<ul class="nav navbar-nav">
+<li class="nav-item">
+<a class="nav-link" href="../..">EZtCloud 文档中心</a>
+</li>
+<li class="nav-item dropdown">
+<a aria-current="page" aria-expanded="false" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown" href="#" role="button">EZtCloud 文档中心</a>
+<ul class="dropdown-menu">
+<li>
+<a class="dropdown-item" href="../API%20%E6%A6%82%E8%BF%B0%203922f40f59804ad5b6d7544403bbbef8/">API 概述</a>
+</li>
+<li>
+<a class="dropdown-item" href="../EZtCloud%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F%208ebf18bd56dc4068b2e14fe2ed829fd5/">EZtCloud是什么？</a>
+</li>
+<li>
+<a class="dropdown-item" href="../EZtCloud%E6%A0%B8%E5%BF%83%E6%A6%82%E5%BF%B5%20d1128b61e6a54f2881b04d16d0e6803c/">EZtCloud核心概念</a>
+</li>
+<li>
+<a class="dropdown-item" href="../HTTPS%20API%20f3298c744728403b8f4421dc5973a652/">HTTPS API</a>
+</li>
+<li>
+<a class="dropdown-item" href="../MQTT%20API%20df1133e206be40389f1495bf6e26ac4c/">MQTT API</a>
+</li>
+<li>
+<a class="dropdown-item" href="../Modbus%E5%AF%84%E5%AD%98%E5%99%A8%E8%AE%BE%E7%BD%AE%20875b6e310a6f4af5a563a2104784a222/">Modbus寄存器设置</a>
+</li>
+<li>
+<a aria-current="page" class="dropdown-item active" href="./">OTA固件升级</a>
+</li>
+<li>
+<a class="dropdown-item" href="../Topic%E6%98%A0%E5%B0%84%20ee377c6b389e499584d714b98d74bfd2/">Topic映射</a>
+</li>
+<li>
+<a class="dropdown-item" href="../%E4%B8%80%E7%BA%A7%E5%AD%90%E8%AE%BE%E5%A4%87MQTT%E6%8E%A5%E5%85%A5%E5%8D%8F%E8%AE%AE%20d2b2693969a740178f541142c94cb8ce/">一级子设备MQTT接入协议</a>
+</li>
+<li>
+<a class="dropdown-item" href="../%E4%B8%AA%E6%80%A7%E5%8C%96UI%20c510c1f3af894dc3b7c03a994639c0f7/">个性化UI</a>
+</li>
+<li>
+<a class="dropdown-item" href="../%E4%BA%8B%E4%BB%B6%E4%B8%8A%E6%8A%A5%20ac94d4010d69405b9d354d7dbc2bfebe/">事件上报</a>
+</li>
+<li>
+<a class="dropdown-item" href="../%E4%BA%91%E5%87%BD%E6%95%B0%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0%E5%BA%93%20ad701cc9c9104466a712c42aa50d6810/">云函数内置函数库</a>
+</li>
+<li>
+<a class="dropdown-item" href="../%E5%88%9B%E5%BB%BA%E4%BB%BB%E5%8A%A1%20156de0c2f6ae4a54ae549c64f6573da2/">创建任务</a>
+</li>
+<li>
+<a class="dropdown-item" href="../%E5%88%9B%E5%BB%BA%E8%A7%84%E5%88%99%E5%BC%95%E6%93%8E%20d3d4fe7e30744197a7692a597c0ecc5a/">创建规则引擎</a>
+</li>
+<li>
+<a class="dropdown-item" href="../%E5%88%9B%E5%BB%BA%E8%AE%BE%E5%A4%87%E7%B1%BB%E5%9E%8B%208ad4ecc7475f47cab618275d7b6c6cf6/">创建设备类型</a>
+</li>
+<li>
+<a class="dropdown-item" href="../%E5%8A%9F%E8%83%BD%E5%AE%9A%E4%B9%89%20a07305405af04054a8156e55a21f4736/">功能定义</a>
+</li>
+<li>
+<a class="dropdown-item" href="../%E5%91%8A%E8%AD%A6%E5%8E%86%E5%8F%B2%20c6759ea8a2a046c2a0dbbf25f19a366f/">告警历史</a>
+</li>
+<li>
+<a class="dropdown-item" href="../%E5%91%8A%E8%AD%A6%E8%A7%84%E5%88%99%2066a26834b9f349a8bbbe62520584c911/">告警规则</a>
+</li>
+<li>
+<a class="dropdown-item" href="../%E5%91%8A%E8%AD%A6%E9%80%9A%E7%9F%A5%2034e96e7ee4e44db98c828fcc18eeb179/">告警通知</a>
+</li>
+<li>
+<a class="dropdown-item" href="../%E5%91%BD%E4%BB%A4%E4%B8%8B%E5%8F%91%E4%BB%BB%E5%8A%A1%20bf7b69cf6db4472c8514df3f42ad977a/">命令下发任务</a>
+</li>
+<li>
+<a class="dropdown-item" href="../%E5%AD%90%E8%AE%BE%E5%A4%87MQTT%E6%8E%A5%E5%85%A5%E5%8D%8F%E8%AE%AE%20233c9ae623f6802ea5d4f2ca6570f6ff/">子设备MQTT接入协议</a>
+</li>
+<li>
+<a class="dropdown-item" href="../%E5%B1%9E%E6%80%A7%E4%B8%8A%E6%8A%A5%205653a3ea4b8b4497821a71e1062c0ef5/">属性上报</a>
+</li>
+<li>
+<a class="dropdown-item" href="../%E5%B1%9E%E6%80%A7%E4%B8%8A%E6%8A%A5%E9%A2%84%E5%A4%84%E7%90%86%207eb8d0d5f3bf49ef9ad8ce143e1bae28/">属性上报预处理</a>
+</li>
+<li>
+<a class="dropdown-item" href="../%E5%B1%9E%E6%80%A7%E4%B8%8B%E5%8F%91%E4%BB%BB%E5%8A%A1%20050151f06a1b47b8a430d8834e392278/">属性下发任务</a>
+</li>
+<li>
+<a class="dropdown-item" href="../%E8%87%AA%E5%AE%9A%E4%B9%89%E4%B8%8B%E5%8F%91%E4%BB%BB%E5%8A%A1%20a153bf6c0b9045d1ac9d7b8f1bf8d98b/">自定义下发任务</a>
+</li>
+<li>
+<a class="dropdown-item" href="../%E8%87%AA%E5%AE%9A%E4%B9%89%E6%95%B0%E6%8D%AE%E4%B8%8A%E6%8A%A5%20c8ba1a641c274ed3b7798f716ada65d8/">自定义数据上报</a>
+</li>
+<li>
+<a class="dropdown-item" href="../%E8%87%AA%E5%AE%9A%E4%B9%89%E6%95%B0%E6%8D%AE%E6%B5%81%20e72fb821221546dfaf6f0685d99a2e43/">自定义数据流</a>
+</li>
+<li>
+<a class="dropdown-item" href="../%E8%AE%BE%E5%A4%87COAP%E5%8D%8F%E8%AE%AE%E6%8E%A5%E5%85%A5%2051399d81a8a94ff1ae4bf791774ca049/">设备COAP协议接入</a>
+</li>
+<li>
+<a class="dropdown-item" href="../%E8%AE%BE%E5%A4%87HTTP%E6%8E%A5%E5%85%A5%E5%8D%8F%E8%AE%AE%208a7c7d817ba747949ca7ebde558ee04f/">设备HTTP接入协议</a>
+</li>
+<li>
+<a class="dropdown-item" href="../%E8%AE%BE%E5%A4%87MQTT%E6%8E%A5%E5%85%A5%E5%8D%8F%E8%AE%AE%20258aa8da137b4cdf9642bcf9907bdd3e/">设备MQTT接入协议</a>
+</li>
+<li>
+<a class="dropdown-item" href="../%E8%AE%BE%E5%A4%87TCP%E6%8E%A5%E5%85%A5%E5%8D%8F%E8%AE%AE%20b23007d89f4347908e11b87b1272b765/">设备TCP接入协议</a>
+</li>
+<li>
+<a class="dropdown-item" href="../%E8%AE%BE%E5%A4%87%E5%BF%AB%E9%80%9F%E8%BF%9E%E6%8E%A5%2063de6714f23f4dba9c62a2caead3b92c/">设备快速连接</a>
+</li>
+<li>
+<a class="dropdown-item" href="../%E8%AE%BE%E5%A4%87%E6%8E%A5%E5%85%A5%E5%8D%8F%E8%AE%AE%20da5b346dad244247b6adcf04af91b122/">设备接入协议</a>
+</li>
+<li>
+<a class="dropdown-item" href="../%E8%AE%BE%E5%A4%87%E6%B6%88%E6%81%AF%E8%B0%83%E8%AF%95%2065d380d4ec15410e8cc841a547fbcd64/">设备消息调试</a>
+</li>
+<li>
+<a class="dropdown-item" href="../%E8%AE%BE%E5%A4%87%E8%81%94%E7%BD%91%E6%96%B9%E5%BC%8F%2029cc3b92a75f45c4a5b21bd0ec0de0c3/">设备联网方式</a>
+</li>
+<li>
+<a class="dropdown-item" href="../%E8%AE%BE%E5%A4%87%E9%80%9A%E8%BF%87DTU%E6%8E%A5%E5%85%A5%2016d9a9791aa548fa80caeb1df6c9078d/">设备通过DTU接入</a>
+</li>
+</ul>
+</li>
+</ul>
+<ul class="nav navbar-nav ms-md-auto">
+<li class="nav-item">
+<a class="nav-link" data-bs-target="#mkdocs_search_modal" data-bs-toggle="modal" href="#">
+<i class="fa fa-search"></i> Search
+                            </a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="../Modbus%E5%AF%84%E5%AD%98%E5%99%A8%E8%AE%BE%E7%BD%AE%20875b6e310a6f4af5a563a2104784a222/" rel="prev">
+<i class="fa fa-arrow-left"></i> Previous
+                                </a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="../Topic%E6%98%A0%E5%B0%84%20ee377c6b389e499584d714b98d74bfd2/" rel="next">
+                                    Next <i class="fa fa-arrow-right"></i>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="container">
+<div class="row">
+<div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+<div class="navbar-header">
+<button class="navbar-toggler collapsed" data-bs-target="#toc-collapse" data-bs-toggle="collapse" title="Table of Contents" type="button">
+<span class="fa fa-angle-down"></span>
+</button>
+</div>
+<div class="navbar-collapse collapse card bg-body-tertiary" id="toc-collapse">
+<ul class="nav flex-column">
+<li class="nav-item" data-bs-level="1"><a class="nav-link" href="#ota">OTA固件升级</a>
+<ul class="nav flex-column">
+</ul>
+</li>
+<li class="nav-item" data-bs-level="1"><a class="nav-link" href="#ota_1">OTA 固件升级</a>
+<ul class="nav flex-column">
+<li class="nav-item" data-bs-level="2"><a class="nav-link" href="#ota_2">什么是OTA？</a>
+<ul class="nav flex-column">
+</ul>
+</li>
+<li class="nav-item" data-bs-level="2"><a class="nav-link" href="#eztcloud-ota">EZtCloud OTA 有哪些特性？</a>
+<ul class="nav flex-column">
+</ul>
+</li>
+<li class="nav-item" data-bs-level="2"><a class="nav-link" href="#ota_3">OTA 固件版本管理</a>
+<ul class="nav flex-column">
+</ul>
+</li>
+<li class="nav-item" data-bs-level="2"><a class="nav-link" href="#_3">设备上报固件当前版本号</a>
+<ul class="nav flex-column">
+</ul>
+</li>
+<li class="nav-item" data-bs-level="2"><a class="nav-link" href="#ota_4">OTA升级方式</a>
+<ul class="nav flex-column">
+</ul>
+</li>
+<li class="nav-item" data-bs-level="2"><a class="nav-link" href="#_4">设备端定期检查新版本</a>
+<ul class="nav flex-column">
+</ul>
+</li>
+<li class="nav-item" data-bs-level="2"><a class="nav-link" href="#_7">云平台推送新版本</a>
+<ul class="nav flex-column">
+</ul>
+</li>
+<li class="nav-item" data-bs-level="2"><a class="nav-link" href="#_9">网关子设备的固件升级</a>
+<ul class="nav flex-column">
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div></div>
+<div class="col-md-9" role="main">
+<h1 id="ota">OTA固件升级</h1>
+<h1 id="ota_1">OTA 固件升级</h1>
+<h2 id="ota_2">什么是OTA？</h2>
+<p>OTA 的全称是 Over-the-Air Technology，即空中升级技术，也就是我们通常说的远程升级，在物联网硬件中特指对固件或系统的升级，有时也称为 FOTA，即 Firmware OTA。</p>
+<h2 id="eztcloud-ota">EZtCloud OTA 有哪些特性？</h2>
+<ul>
+<li>版本号支持格式多样化，云平台提供版本号检查，设备端无需任何计算。</li>
+<li>支持设备轮询升级检查（Poll）和云端推送升级（Push）两种模式。</li>
+<li>支持云端批量升级同一设备类型下的多台设备。</li>
+<li>支持云端定时推送升级任务到指定设备或所有设备。</li>
+<li>可指定一个或多个待升级设备，适用于灰度升级和局部调试。</li>
+<li>可指定待升级版本和目标版本，适用于差分升级。</li>
+<li>提供升级包 md5 等校验计算。</li>
+<li>固件下载支持 http/https 可选。</li>
+</ul>
+<h2 id="ota_3">OTA 固件版本管理</h2>
+<p>EZtCloud 提供了独立的固件托管服务，您只需创建固件版本，并上传固件包。</p>
+<h3 id="_1">创建固件版本</h3>
+<p>进入 <strong>维护 &gt; OTA 版本 &gt; 创建 OTA 版本</strong>，填写如下内容：</p>
+<p><img alt="image-20240808093720021" src="docs09%E8%AE%BE%E5%A4%87%E7%BB%B4%E6%8A%A4assetsimage-20240808093720021.png"/></p>
+<ul>
+<li>版本名称：给固件版本起一个任意的名称。</li>
+<li>设备类型：选择需要升级的设备所属设备类型。固件版本对设备类型下的所有设备有效。</li>
+<li>版本号：支持通用的版本号命名方式，例如：<code>1.0.0</code></li>
+<li>模块：用于表示该固件属于哪个模块，默认为 <code>main</code>，即硬件的主模块。当硬件中有多个需要升级的模块时，可使用不同的模块名称来创建固件。</li>
+<li>
+<p>是否指定待升级设备：如果不指定待升级设备，则默认该固件版本对设备类型下所有设备有效。</p>
+<p>使用该功能，可对新固件限定小范围升级，从而验证升级可靠性。另外，也可以根据也许的需要，实现 <em>灰度升级</em>。</p>
+</li>
+<li>
+<p>是否指定待升级版本：如果不指定待升级版本，则默认该固件版本对设备类型下所有版本的设备有效。</p>
+<p>当进行 <em>差分升级</em> 时，需要特别约定固件升级前后的版本，适合使用该功能。</p>
+</li>
+<li>
+<p>上传固件：支持文件格式包括：<code>.bin,.img,.dav,.tar,.gz,.zip,.gzip,.apk,.tar.gz</code>。</p>
+</li>
+<li>固件下载地址使用 HTTPS：这里的设置决定了云平台下发给设备的升级命令消息中，固件下载地址是否使用 HTTPS。对于不支持 HTTPS 访问的单片机，可以关闭该选项，使用普通的 HTTP 下载地址。</li>
+</ul>
+<h3 id="_2">编辑固件版本</h3>
+<p>固件版本创建后，支持以下编辑操作：</p>
+<ul>
+<li>启用/禁用：固件版本被禁用后，则不会被云平台用在新版本检查中，可用于版本临时测试或回滚等场景。</li>
+<li>编辑指定升级的设备</li>
+<li>编辑指定升级的版本</li>
+<li>编辑是否支持 HTTPS</li>
+<li>移除固件版本</li>
+</ul>
+<p>提示：固件版本创建后，不支持重新上传固件包，以确保版本和固件包的一致性，避免引起不必要的混淆。如需上传新的固件包，请创建新的固件版本。</p>
+<h2 id="_3">设备上报固件当前版本号</h2>
+<p>在设备进行 OTA 升级之前，云平台需要知道设备当前固件的版本号，从而为每个设备计算是否需要升级，以及需要升级到哪个新版本。</p>
+<p>设备上报固件当前版本号，需要通过 MQTT 接入云平台，通过简单的属性上报，即可上报当前版本号。</p>
+<p>下边是一个属性上报的例子，代表版本的属性标识符为 <code>version</code> ，实际上您可以使用任意标识符，比如： <code>mcu_version</code> 、 <code>gps_version</code> 。</p>
+<pre><code class="language-json">{
+  "version": "1.0.0"
+}
+</code></pre>
+<p>通常，设备应该在每次上电开机，并成功连接云平台后，首先上报当前版本。</p>
+<h2 id="ota_4">OTA升级方式</h2>
+<p>EZtCloud 云平台支持两种OTA升级方式：</p>
+<ul>
+<li>设备端定期检查新版本</li>
+<li>云平台推送新版本</li>
+</ul>
+<h2 id="_4">设备端定期检查新版本</h2>
+<p>由设备端定期向云平台发起检查新版本的请求，云平台回应设备是否存在新版本需要升级。序列图如下：</p>
+<div class="mermaid">sequenceDiagram
+    participant Device
+    participant EZtCloud
+    participant User
+
+    Device-&gt;&gt;Device: 开机
+    Note over Device: 上报当前版本
+    Device-&gt;&gt;EZtCloud: 属性上报 version="1.0.0"
+    Note over Device: 定期检查新版本
+    loop Every minute
+        Device-&gt;&gt;EZtCloud: 事件上报 otaCheck
+        EZtCloud-&gt;&gt;Device: 命令下发 otaUpgrade, upgrade=false
+    end
+    User-&gt;&gt;EZtCloud: 创建固件版本 1.0.1
+    Device-&gt;&gt;EZtCloud: 事件上报 otaCheck
+    Note over Device: 发现新版本
+    EZtCloud-&gt;&gt;Device: 命令下发 otaUpgrade, upgrade=true, version="1.0.1"
+    Device-&gt;&gt;Device: 下载固件
+    Device-&gt;&gt;Device: 更新固件
+    Device-&gt;&gt;Device: 重启
+
+</div>
+<h3 id="ota_5">创建OTA事件规则</h3>
+<p>设备向云平台请求新版本的过程，是借助事件上报消息来实现的。</p>
+<p>我们需要创建一个事件上报的规则，来实现 OTA 升级检查。</p>
+<p>进入 <strong>规则 &gt; 创建规则</strong> ，填写如下内容：</p>
+<ul>
+<li>规则名称：起一个规则名称，例如：OTA 升级检查。</li>
+<li>规则类型：选择 <strong>事件上报</strong>。</li>
+<li>设备来源类型：选择 <strong>设备类型</strong></li>
+<li>选择来源：选择您需要 OTA 升级的设备所属的设备类型。</li>
+<li>事件名称：输入 <code>otaCheck</code>，也可以使用其它您喜欢的标识符，只要和随后事件消息中的标识符一致即可。</li>
+</ul>
+<p>如图：</p>
+<p><img alt="image-20240808100305075" src="docs09%E8%AE%BE%E5%A4%87%E7%BB%B4%E6%8A%A4assetsimage-20240808100305075.png"/></p>
+<p>随后给事件规则添加操作，选择<strong>OTA升级检查</strong>，如下图：</p>
+<p><img alt="image-20240808100634990" src="docs09%E8%AE%BE%E5%A4%87%E7%BB%B4%E6%8A%A4assetsimage-20240808100634990.png"/></p>
+<p>在弹出的设置窗口中，填写如下：</p>
+<p><img alt="image-20240808100747973" src="docs09%E8%AE%BE%E5%A4%87%E7%BB%B4%E6%8A%A4assetsimage-20240808100747973.png"/></p>
+<ul>
+<li>版本属性：填写属性上报时，代表版本的属性标识符，这里是 <code>version</code>。</li>
+<li>模块：填写创建固件版本时对应的模块名称，默认是 <code>main</code>。</li>
+</ul>
+<p>事件规则创建完成。</p>
+<h3 id="_5">设备上报事件消息</h3>
+<p>接下来，就可以在设备端通过 MQTT 协议向云平台发送事件上报消息，如下：</p>
+<pre><code class="language-json">{
+  "method": "otaCheck",
+  "params": {}
+}
+</code></pre>
+<h3 id="_6">设备接收命令消息</h3>
+<p>云平台收到设备上报的事件消息后，会立即在 OTA 固件版本库中查找是否有符合的新版本，如果存在新版本，则下发包含新版本信息的命令消息，例如：</p>
+<pre><code class="language-json">{
+  "method": "otaUpgrade",
+  "params": {
+    "module": "main",
+    "upgrade": true,
+    "version": "1.1.5",
+    "url": "http://xxx.com/xxx/xxx.bin",
+    "size": 1363713,
+    "md5": "481701fa4093499eacd05b57bebc7ffc"
+  },
+  "command_name": "OTA升级",
+  "id": 98310
+}
+</code></pre>
+<h2 id="_7">云平台推送新版本</h2>
+<p>另一种 OTA 升级方式是由云平台主动推送包含新版本固件信息的消息给设备端，设备端收到消息后下载固件并完成升级。</p>
+<p>这种方式和前一种方式的区别，主要在于不需要设备端主动上报事件来检查新版本，而是由工作人员手动触发或应用端调用 API 来推送包含新版本信息的命令消息给设备端。</p>
+<p>序列图如下：</p>
+<div class="mermaid">sequenceDiagram
+    participant Device
+    participant EZtCloud
+    participant User
+
+    Device-&gt;&gt;Device: 开机
+    Note over Device: 上报当前版本
+    Device-&gt;&gt;EZtCloud: 属性上报 version="1.0.0"
+    Note over Device: 等待云端下发升级命令
+    User-&gt;&gt;EZtCloud: 创建固件版本 1.0.1
+    User-&gt;&gt;EZtCloud: 运行升级任务
+    EZtCloud-&gt;&gt;Device: 命令下发 otaUpgrade, upgrade=true, version="1.0.1"
+    Device-&gt;&gt;Device: 下载固件
+    Device-&gt;&gt;Device: 更新固件
+    Device-&gt;&gt;Device: 重启
+
+</div>
+<p>通过云平台主动推送新版本给设备，是通过 <strong>任务</strong> 来实现的。云平台提供了 OTA 升级推送的任务类型，该任务会对运行的目标设备进行版本对比检查，如果版本库中存在新版本可升级，则下发命令消息给设备。</p>
+<p>提示：需要注意的是，当设备不存在可升级的新版本时，OTA 升级推送任务不会下发任何命令消息给设备。</p>
+<h3 id="ota_6">创建OTA升级推送任务</h3>
+<p>进入 <strong>任务 &gt; 创建任务</strong>，填写如下内容：</p>
+<p><img alt="image-20240808101953936" src="docs09%E8%AE%BE%E5%A4%87%E7%BB%B4%E6%8A%A4assetsimage-20240808101953936.png"/></p>
+<ul>
+<li>任务名称：起一个任务名称，例如：OTA 升级任务</li>
+<li>目标类型：选择设备类型</li>
+<li>选择目标：选择需要 OTA 升级的设备所属的设备类型。</li>
+<li>任务类型：选择命令下发</li>
+<li>选择任务：选择 <strong>OTA 升级推送</strong></li>
+<li>定时方式：可选择单次定时，也可根据需要选择相应的定时策略。</li>
+</ul>
+<p>在 <strong>OTA 升级推送</strong> 的配置窗口中，类似事件规则的填写：</p>
+<ul>
+<li>版本属性：填写属性上报时，代表版本的属性标识符，这里是 <code>version</code>。</li>
+<li>模块：填写创建固件版本时对应的模块名称，默认是 <code>main</code>。</li>
+</ul>
+<p>任务创建完成。</p>
+<h3 id="ota_7">运行OTA升级推送任务</h3>
+<p>进入项目的 <strong>任务</strong> 或当前设备类型的 <strong>任务</strong>，可以看到刚刚创建的任务，点击运行图标，可手动触发运行任务。</p>
+<p><img alt="image-20240808102403129" src="docs09%E8%AE%BE%E5%A4%87%E7%BB%B4%E6%8A%A4assetsimage-20240808102403129.png"/></p>
+<p>这里可以选择对设备类型下所有设备运行升级推送任务，或者指定一个或多个设备运行该任务。</p>
+<h3 id="_8">设备端接收命令消息</h3>
+<p>这里和设备主动请求新版本时的下发命令完全相同，可参考：<strong>设备接收命令消息</strong></p>
+<h2 id="_9">网关子设备的固件升级</h2>
+<p>OTA 固件升级功能不仅可用于直连设备（也包括网关本身），还可以用于网关子设备。只需为子设备建立前边提到的相关规则和任务，并为子设备的设备类型创建固件版本信息。</p>
+<p>例如，我们为子设备类型创建了事件规则，绑定在子设备的 <code>otaCheck</code> 事件。如下图：</p>
+<p><img alt="image-20240808103439510" src="docs09%E8%AE%BE%E5%A4%87%E7%BB%B4%E6%8A%A4assetsimage-20240808103439510.png"/></p>
+<p>提示：在设备上报事件检查固件新版本之前，别忘了先通过属性上报，来上报子设备的当前版本号。详细介绍请浏览 <strong>设备上报固件当前版本号</strong></p>
+<p>接下来，网关上报子设备的事件，用来检查该子设备是否有新的固件版本可以升级，上报的消息如下：</p>
+<pre><code class="language-json">{
+  "device": "DEVICE1",
+  "event": { "method": "otaCheck", "params": {}, "id": 1000 }
+}
+</code></pre>
+<p>在 MQTTX中模拟，如下图：</p>
+<p><img alt="" src="docs09%E8%AE%BE%E5%A4%87%E7%BB%B4%E6%8A%A4assetsimage-20240808103918972.png"/></p>
+<p>如果存在新的固件版本，网关会马上收到云平台下发的 OTA 升级推送命令，如下图：</p>
+<p><img alt="image-20240808104256666" src="docs09%E8%AE%BE%E5%A4%87%E7%BB%B4%E6%8A%A4assetsimage-20240808104256666.png"/></p></div>
+</div>
+</div>
+<footer class="col-md-12">
+<hr/>
+<p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+</footer>
+<script src="../../js/bootstrap.bundle.min.js"></script>
+<script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+<script src="../../js/base.js"></script>
+<script src="../../search/main.js"></script>
+<div aria-hidden="true" aria-labelledby="searchModalLabel" class="modal" id="mkdocs_search_modal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-lg">
+<div class="modal-content">
+<div class="modal-header">
+<h4 class="modal-title" id="searchModalLabel">Search</h4>
+<button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button>
+</div>
+<div class="modal-body">
+<p>From here you can search these documents. Enter your search terms below.</p>
+<form>
+<div class="form-group">
+<input class="form-control" id="mkdocs-search-query" placeholder="Search..." title="Type search term here" type="search"/>
+</div>
+</form>
+<div data-no-results-text="No results found" id="mkdocs-search-results"></div>
+</div>
+<div class="modal-footer">
+</div>
+</div>
+</div>
+</div><div aria-hidden="true" aria-labelledby="keyboardModalLabel" class="modal" id="mkdocs_keyboard_modal" role="dialog" tabindex="-1">
+<div class="modal-dialog">
+<div class="modal-content">
+<div class="modal-header">
+<h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+<button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button>
+</div>
+<div class="modal-body">
+<table class="table">
+<thead>
+<tr>
+<th style="width: 20%;">Keys</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="help shortcut"><kbd>?</kbd></td>
+<td>Open this help</td>
+</tr>
+<tr>
+<td class="next shortcut"><kbd>n</kbd></td>
+<td>Next page</td>
+</tr>
+<tr>
+<td class="prev shortcut"><kbd>p</kbd></td>
+<td>Previous page</td>
+</tr>
+<tr>
+<td class="search shortcut"><kbd>s</kbd></td>
+<td>Search</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="modal-footer">
+</div>
+</div>
+</div>
+</div>
+<script type="module">import mermaid from "https://unpkg.com/mermaid@10.4.0/dist/mermaid.esm.min.mjs";
+mermaid.initialize({});</script></body>
+</html>

@@ -1,0 +1,116 @@
+site_name: EZtCloud文档中心
+
+plugins:
+  - search
+  - mermaid2
+  - offline
+  - include
+
+theme:
+  language: zh
+  name: material
+  features:
+    - search.suggest
+    - search.highlight
+    - toc.follow
+    #- navigation.tracking
+  logo: img/logo.png
+  favicon: img/favicon.ico
+  palette:
+    # Palette toggle for automatic mode
+    - media: "(prefers-color-scheme)"
+      primary: custom
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to light mode
+
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      primary: custom
+      scheme: default 
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      primary: custom
+      scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to system preference
+
+markdown_extensions:
+  - toc:
+      title: 摘要
+      slugify: !!python/name:pymdownx.slugs.uslugify
+      permalink: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.superfences
+
+extra:
+  homepage: https://www.eztcloud.com/
+  generator: true
+
+extra_css:
+  - stylesheets/extra.css
+
+copyright: Copyright &copy; 2017 - 2025 www.hotanzn.com
+
+nav:
+  - 介绍:
+    - Eztcloud是什么？: 介绍\EZtCloud是什么？.md
+    - Eztcloud核心概念: 介绍\EZtCloud核心概念.md
+
+  - 设备接入:
+    - 一级子设备Mqtt接入协议: 设备接入\一级子设备MQTT接入协议.md
+    - 子设备Mqtt接入协议: 设备接入\子设备MQTT接入协议.md
+    - 设备Coap协议接入: 设备接入\设备COAP协议接入.md
+    - 设备Http接入协议: 设备接入\设备HTTP接入协议.md
+    - 设备Mqtt接入协议: 设备接入\设备MQTT接入协议.md
+    - 设备Tcp接入协议: 设备接入\设备TCP接入协议.md
+    - 设备快速连接: 设备接入\设备快速连接.md
+    - 设备接入协议: 设备接入\设备接入协议.md
+    - 设备联网方式: 设备接入\设备联网方式.md
+    - 设备通过Dtu接入: 设备接入\设备通过DTU接入.md
+
+  - 设备消息调试:
+    - 设备消息调试: 设备消息调试\设备消息调试.md
+
+  - 设备类型:
+    - Modbus寄存器设置: 设备类型\Modbus寄存器设置.md
+    - 个性化Ui: 设备类型\个性化UI.md
+    - 创建设备类型: 设备类型\创建设备类型.md
+    - 功能定义: 设备类型\功能定义.md
+    - 自定义数据流: 设备类型\自定义数据流.md
+
+  - 规则引擎:
+    - 事件上报: 规则引擎\事件上报.md
+    - 云函数内置函数库: 规则引擎\云函数内置函数库.md
+    - 创建规则引擎: 规则引擎\创建规则引擎.md
+    - 属性上报: 规则引擎\属性上报.md
+    - 属性上报预处理: 规则引擎\属性上报预处理.md
+    - 自定义数据上报: 规则引擎\自定义数据上报.md
+
+  - 定时任务:
+    - 创建任务: 定时任务\创建任务.md
+    - 命令下发任务: 定时任务\命令下发任务.md
+    - 属性下发任务: 定时任务\属性下发任务.md
+    - 自定义下发任务: 定时任务\自定义下发任务.md
+
+  - 告警通知:
+    - 告警历史: 告警通知\告警历史.md
+    - 告警规则: 告警通知\告警规则.md
+    - 告警通知: 告警通知\告警通知.md
+    
+  - 设备维护:
+    - Ota固件升级: 设备维护\OTA固件升级.md
+
+  - API:
+    - Api 概述: API\API 概述.md
+    - Https Api: API\HTTPS API.md
+    - Mqtt Api: API\MQTT API.md
+
+  - Topic映射:
+    - Topic映射: Topic映射\Topic映射.md
