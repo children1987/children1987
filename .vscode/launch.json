@@ -4,12 +4,17 @@
     // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
-    
         {
-            "name": "Python Debugger: Current File",
+            "name": "Run: pipenv run mkdocs serve",
             "type": "debugpy",
             "request": "launch",
-            "program": "${file}",
+            "module": "pipenv",
+            "args": [
+                "run",
+                "mkdocs",
+                "serve"
+            ],
+            "cwd": "${workspaceFolder}",
             "console": "integratedTerminal"
         }
     ]
