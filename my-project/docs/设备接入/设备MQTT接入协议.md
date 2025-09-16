@@ -8,17 +8,17 @@
 
 | ***消息类型*** | ***主题*** | ***发布/订阅*** |
 | --- | --- | --- |
-| [设备上报属性](设备MQTT接入协议.md) | attributes/{username} | 设备发布 |
-| [设备上报属性的响应](设备MQTT接入协议.md) | attributes_response/{username} | 设备订阅 |
-| [设备获取云端属性](设备MQTT接入协议.md) | attributes_get/{username} | 设备发布 |
-| [设备获取云端属性的响应](设备MQTT接入协议.md) | attributes_get_response/{username} | 设备订阅 |
-| [云端下发属性至设备](设备MQTT接入协议.md) | attributes_push/{username} | 设备订阅 |
-| [设备上报事件](设备MQTT接入协议.md) | event_report/{username} | 设备发布 |
-| [设备上报事件的响应](设备MQTT接入协议.md) | event_response/{username} | 设备订阅 |
-| [云端下发命令至设备](设备MQTT接入协议.md) | command_send/{username} | 设备订阅 |
-| [云端下发命令至设备的响应](设备MQTT接入协议.md) | command_reply/{username} | 设备发布 |
-| [设备上报自定义数据](设备MQTT接入协议.md) | data/{username}/{identifier} | 设备发布 |
-| [云端下发自定义数据至设备](设备MQTT接入协议.md) | data_set/{username}/{identifier} | 设备订阅 |
+| [设备上报属性](#设备上报属性) | attributes/{username} | 设备发布 |
+| [设备上报属性的响应](#设备上报属性的响应) | attributes_response/{username} | 设备订阅 |
+| [设备获取云端属性](#设备获取云端属性) | attributes_get/{username} | 设备发布 |
+| [设备获取云端属性的响应](#设备获取云端属性的响应) | attributes_get_response/{username} | 设备订阅 |
+| [云端下发属性至设备](#云端下发属性至设备) | attributes_push/{username} | 设备订阅 |
+| [设备上报事件](#设备上报事件) | event_report/{username} | 设备发布 |
+| [设备上报事件的响应](#设备上报事件的响应) | event_response/{username} | 设备订阅 |
+| [云端下发命令至设备](#云端下发命令至设备) | command_send/{username} | 设备订阅 |
+| [云端下发命令至设备的响应](#云端下发命令至设备的响应) | command_reply/{username} | 设备发布 |
+| [设备上报自定义数据](#设备上报自定义数据) | data/{username}/{identifier} | 设备发布 |
+| [云端下发自定义数据至设备](#云端下发自定义数据至设备) | data_set/{username}/{identifier} | 设备订阅 |
 
 ***提示：以上自定义数据相关主题中的 `identifier`，是指自定义数据流标识符。***
 

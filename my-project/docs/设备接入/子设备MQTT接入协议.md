@@ -8,17 +8,17 @@
 
 | ***消息类型*** | ***主题*** | ***发布/订阅*** |
 | --- | --- | --- |
-| [上报子设备上线通知](子设备MQTT接入协议.md) | sub_connect/{username} | 父设备发布 |
-| [上报子设备下线通知](子设备MQTT接入协议.md) | sub_disconnect/{username} | 父设备发布 |
-| [上报子设备属性](子设备MQTT接入协议.md) | sub_attributes/{username} | 父设备发布 |
-| [上报子设备属性的响应](子设备MQTT接入协议.md) | sub_attributes_response/{username} | 父设备订阅 |
-| [获取子设备云端属性](子设备MQTT接入协议.md) | sub_attributes_get/{username} | 父设备发布 |
-| [获取子设备云端属性的响应](子设备MQTT接入协议.md) | sub_attributes_get_response/{username} | 父设备订阅 |
-| [云端下发属性至子设备](子设备MQTT接入协议.md) | sub_attributes_push/{username} | 父设备订阅 |
-| [上报子设备事件](子设备MQTT接入协议.md) | sub_event_report/{username} | 父设备发布 |
-| [上报子设备事件的响应](子设备MQTT接入协议.md) | sub_event_response/{username} | 父设备订阅 |
-| [云端下发命令至子设备](子设备MQTT接入协议.md) | sub_command_send/{username} | 父设备订阅 |
-| [云端下发命令至子设备的响应](子设备MQTT接入协议.md) | sub_command_reply/{username} | 父设备发布 |
+| [上报子设备上线通知](#上报子设备上线通知) | sub_connect/{username} | 父设备发布 |
+| [上报子设备下线通知](#上报子设备下线通知) | sub_disconnect/{username} | 父设备发布 |
+| [上报子设备属性](#上报子设备属性) | sub_attributes/{username} | 父设备发布 |
+| [上报子设备属性的响应](#上报子设备属性的响应) | sub_attributes_response/{username} | 父设备订阅 |
+| [获取子设备云端属性](#获取子设备云端属性) | sub_attributes_get/{username} | 父设备发布 |
+| [获取子设备云端属性的响应](#获取子设备云端属性的响应) | sub_attributes_get_response/{username} | 父设备订阅 |
+| [云端下发属性至子设备](#云端下发属性至子设备) | sub_attributes_push/{username} | 父设备订阅 |
+| [上报子设备事件](#上报子设备事件) | sub_event_report/{username} | 父设备发布 |
+| [上报子设备事件的响应](#上报子设备事件的响应) | sub_event_response/{username} | 父设备订阅 |
+| [云端下发命令至子设备](#云端下发命令至子设备) | sub_command_send/{username} | 父设备订阅 |
+| [云端下发命令至子设备的响应](#云端下发命令至子设备的响应) | sub_command_reply/{username} | 父设备发布 |
 
 ## **各主题的使用方法**
 

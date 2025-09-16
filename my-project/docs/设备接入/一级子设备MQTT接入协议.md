@@ -14,17 +14,17 @@
 
 | ***消息类型*** | ***主题*** | ***发布/订阅*** |
 | --- | --- | --- |
-| [子设备上报上线通知](一级子设备MQTT接入协议.md) | gateway_connect/{username} | 网关发布 |
-| [子设备上报下线通知](一级子设备MQTT接入协议.md) | gateway_disconnect/{username} | 网关发布 |
-| [子设备上报属性](一级子设备MQTT接入协议.md) | gateway_attributes/{username} | 网关发布 |
-| [子设备上报属性的响应](一级子设备MQTT接入协议.md) | gateway_attributes_response/{username} | 网关订阅 |
-| [子设备获取云端属性](一级子设备MQTT接入协议.md) | gateway_attributes_get/{username} | 网关发布 |
-| [子设备获取云端属性的响应](一级子设备MQTT接入协议.md) | gateway_attributes_get_response/{username} | 网关订阅 |
-| [云端下发属性至子设备](一级子设备MQTT接入协议.md) | gateway_attributes_push/{username} | 网关订阅 |
-| [子设备上报事件](一级子设备MQTT接入协议.md) | gateway_event_report/{username} | 网关发布 |
-| [子设备上报事件的响应](一级子设备MQTT接入协议.md) | gateway_event_response/{username} | 网关订阅 |
-| [云端下发命令至子设备](一级子设备MQTT接入协议.md) | gateway_command_send/{username} | 网关订阅 |
-| [云端下发命令至子设备的响应](一级子设备MQTT接入协议.md) | gateway_command_reply/{username} | 网关发布 |
+| [子设备上报上线通知](#子设备上报上线通知) | gateway_connect/{username} | 网关发布 |
+| [子设备上报下线通知](#子设备上报下线通知) | gateway_disconnect/{username} | 网关发布 |
+| [子设备上报属性](#子设备上报属性) | gateway_attributes/{username} | 网关发布 |
+| [子设备上报属性的响应](#子设备上报属性的响应) | gateway_attributes_response/{username} | 网关订阅 |
+| [子设备获取云端属性](#子设备获取云端属性) | gateway_attributes_get/{username} | 网关发布 |
+| [子设备获取云端属性的响应](#子设备获取云端属性的响应) | gateway_attributes_get_response/{username} | 网关订阅 |
+| [云端下发属性至子设备](#云端下发属性至子设备) | gateway_attributes_push/{username} | 网关订阅 |
+| [子设备上报事件](#子设备上报事件) | gateway_event_report/{username} | 网关发布 |
+| [子设备上报事件的响应](#子设备上报事件的响应) | gateway_event_response/{username} | 网关订阅 |
+| [云端下发命令至子设备](#云端下发命令至子设备) | gateway_command_send/{username} | 网关订阅 |
+| [云端下发命令至子设备的响应](#云端下发命令至子设备的响应) | gateway_command_reply/{username} | 网关发布 |
 
 ## 各主题的使用方法
 

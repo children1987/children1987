@@ -1,7 +1,5 @@
 # HTTPS API
 
-# HTTPS API
-
 ## 准备工作
 
 ### 获得项目 API 接入参数
