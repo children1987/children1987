@@ -74,13 +74,13 @@ nav:
     - 设备联网方式: 设备联网方式.md
     - 设备接入协议: 设备接入协议.md
     - 设备快速连接: 设备快速连接.md
-    - 设备Mqtt接入协议: 设备MQTT接入协议.md
-    - 一级子设备Mqtt接入协议: 一级子设备MQTT接入协议.md
-    - 子设备Mqtt接入协议: 子设备MQTT接入协议.md
-    - 设备Tcp接入协议: 设备TCP接入协议.md
-    - 设备Http接入协议: 设备HTTP接入协议.md
-    - 设备Coap协议接入: 设备COAP协议接入.md
-    - 设备通过Dtu接入: 设备通过DTU接入.md
+    - 设备MQTT接入协议: 设备MQTT接入协议.md
+    - 一级子设备MQTT接入协议: 一级子设备MQTT接入协议.md
+    - 子设备MQTT接入协议: 子设备MQTT接入协议.md
+    - 设备TCP接入协议: 设备TCP接入协议.md
+    - 设备HTTP接入协议: 设备HTTP接入协议.md
+    - 设备COAP协议接入: 设备COAP协议接入.md
+    - 设备通过DTU接入: 设备通过DTU接入.md
 
   - 设备信息调试:
     - 设备消息调试: 设备消息调试.md
@@ -90,7 +90,7 @@ nav:
     - 功能定义: 功能定义.md
     - 自定义数据流: 自定义数据流.md
     - Modbus寄存器设置: Modbus寄存器设置.md
-    - 个性化Ui: 个性化UI.md
+    - 个性化UI: 个性化UI.md
 
   - 规则引擎:
     - 创建规则引擎: 创建规则引擎.md
@@ -115,9 +115,9 @@ nav:
     - OTA固件升级: OTA固件升级.md
 
   - API:
-    - Api 概述: API 概述.md
-    - Https Api: HTTPS API.md
-    - Mqtt Api: MQTT API.md
+    - API 概述: API 概述.md
+    - HTTPS API: HTTPS API.md
+    - MQTT API: MQTT API.md
 
   - Topic映射:
     - Topic映射: Topic映射.md
