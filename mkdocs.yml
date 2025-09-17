@@ -63,7 +63,7 @@ extra_css:
 
 copyright: Copyright &copy; 2017 - 2025 www.hotanzn.com
 
-edit_uri: https://github.com/children1987/eztcloud_docs_mkdocs/tree/main/my-project/docs
+edit_uri: https://github.com/children1987/eztcloud_docs_mkdocs/tree/main/docs
 
 nav:
   - 介绍:
