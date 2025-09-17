@@ -7,7 +7,6 @@ name = "pip_conf_index_global"
 mkdocs = "*"
 mkdocs-mermaid2-plugin = "*"
 mkdocs-material = "*"
-mkdocs-include = "*"
 
 [dev-packages]
 
