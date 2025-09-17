@@ -145,19 +145,19 @@ print(response.text)
 
 ### 项目
 
-详见[接口文档](https://api.eztcloud.com/redoc/#tag/%E9%A1%B9%E7%9B%AE)。
+详见[接口文档](https://api.eztcloud.com/swagger-ui/)。
 
 ### 设备类型
 
-详见[接口文档](https://api.eztcloud.com/redoc/#tag/%E8%AE%BE%E5%A4%87%E7%B1%BB%E5%9E%8B)。
+详见[接口文档](https://api.eztcloud.com/swagger-ui/)。
 
 ### 设备组
 
-详见[接口文档](https://api.eztcloud.com/redoc/#tag/%E9%A1%B9%E7%9B%AE%E7%BB%84)。
+详见[接口文档](https://api.eztcloud.com/swagger-ui/)。
 
 ### 设备
 
-### 设备属性下发
+#### 设备属性下发
 
 **Request Syntax**
 
@@ -194,6 +194,6 @@ Content-type: application/json
 - 200：请求成功。
 - 其它：请求失败。
 
-### 其它接口
+#### 其它接口
 
-详见[接口文档](https://api.eztcloud.com/redoc/#tag/%E8%AE%BE%E5%A4%87)。
+详见[接口文档](https://api.eztcloud.com/swagger-ui/)。
