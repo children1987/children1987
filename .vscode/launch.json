@@ -5,17 +5,11 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Run: pipenv run mkdocs serve",
-            "type": "debugpy",
+            "name": "mkdocs serve",
+            "type": "node-terminal",
             "request": "launch",
-            "module": "pipenv",
-            "args": [
-                "run",
-                "mkdocs",
-                "serve"
-            ],
-            "cwd": "${workspaceFolder}",
-            "console": "integratedTerminal"
+            "command": "pipenv run mkdocs serve",
+            "cwd": "${workspaceFolder}"
         }
     ]
 }
