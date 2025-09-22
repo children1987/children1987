@@ -53,6 +53,9 @@ markdown_extensions:
   - pymdownx.highlight:
       anchor_linenums: true
   - pymdownx.superfences
+  # 考虑到md文档对其它工具的兼容性，暂不使用，而是用extra.css替代
+  # - pymdownx.details
+  # - admonition
 
 extra:
   homepage: https://www.eztcloud.com/
@@ -67,6 +70,7 @@ edit_uri: https://github.com/children1987/eztcloud_docs_mkdocs/tree/main/docs
 
 nav:
   - 介绍:
+    - 文档约定: 文档约定.md
     - EZtCloud是什么？: EZtCloud是什么？.md
     - EZtCloud核心概念: EZtCloud核心概念.md
 
