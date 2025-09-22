@@ -3,3 +3,170 @@
   --md-primary-fg-color--light: #409EFF;
   --md-primary-fg-color--dark:  #409EFF;
 }
+
+/* 通用 Admonition 样式 - 兼容所有 Markdown 渲染器 */
+blockquote {
+  background-color: var(--md-default-bg-color, #f8f9ff);
+  border: none;
+  border-left: 4px solid var(--md-primary-fg-color, #448aff);
+  border-radius: 0.4rem;
+  padding: 1rem 1.25rem;
+  margin: 1rem 0;
+  box-shadow: 0 0.2rem 0.5rem rgba(0,0,0,.05), 0 0 0.05rem rgba(0,0,0,.1);
+  position: relative;
+  font-style: normal;
+  font-size: 0.7rem;
+  line-height: 1.6;
+  overflow: hidden;
+  transition: all 0.2s ease;
+}
+
+/* 悬停效果 */
+blockquote:hover {
+  box-shadow: 0 0.3rem 0.8rem rgba(0,0,0,.08), 0 0 0.1rem rgba(0,0,0,.15) !important;
+  transform: translateY(-1px);
+  transition: all 0.2s ease;
+}
+
+/* 添加更精确的阴影效果 */
+blockquote::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(68, 138, 255, 0.02) 0%, rgba(68, 138, 255, 0.05) 100%);
+  pointer-events: none;
+  border-radius: 0.4rem;
+  z-index: 0;
+}
+
+/* 通用标题样式 */
+blockquote strong {
+  color: var(--md-primary-fg-color, #448aff);
+  font-weight: 700;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  display: block;
+  margin-bottom: 0.75rem;
+  line-height: 1.2;
+  position: relative;
+  z-index: 1;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* 引用块内容样式 */
+blockquote p {
+  margin: 0.5rem 0;
+  color: var(--md-default-fg-color, #37474f);
+  line-height: 1.6;
+  font-size: 0.7rem;
+  font-weight: normal;
+  position: relative;
+  z-index: 1;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+blockquote ul, blockquote ol {
+  margin: 0.5rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+blockquote li {
+  color: var(--md-default-fg-color, #37474f);
+  line-height: 1.6;
+  margin: 0.25rem 0;
+  font-size: 0.7rem;
+  font-weight: normal;
+  position: relative;
+  z-index: 1;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* 优化引用块内的链接样式 */
+blockquote a {
+  color: var(--md-primary-fg-color, #448aff);
+  text-decoration: none;
+}
+
+blockquote a:hover {
+  text-decoration: underline;
+}
+
+/* 确保引用块内没有额外的边距 */
+blockquote > *:first-child {
+  margin-top: 0;
+}
+
+blockquote > *:last-child {
+  margin-bottom: 0;
+}
+
+/* MkDocs Material 主题切换适配 */
+/* 明亮主题 - 使用 CSS 变量自动适配 */
+[data-md-color-scheme="default"] blockquote {
+  background-color: var(--md-default-bg-color, #f8f9ff);
+  border-left-color: var(--md-primary-fg-color, #448aff);
+  box-shadow: 0 0.2rem 0.5rem rgba(0,0,0,.05), 0 0 0.05rem rgba(0,0,0,.1);
+}
+
+[data-md-color-scheme="default"] blockquote:hover {
+  box-shadow: 0 0.4rem 1rem rgba(0,0,0,.1), 0 0 0.1rem rgba(0,0,0,.2) !important;
+}
+
+[data-md-color-scheme="default"] blockquote::before {
+  background: linear-gradient(135deg, rgba(68, 138, 255, 0.02) 0%, rgba(68, 138, 255, 0.05) 100%);
+}
+
+/* 暗夜主题 - 使用 CSS 变量自动适配 */
+[data-md-color-scheme="slate"] blockquote {
+  background-color: var(--md-default-bg-color, #1a1a1a);
+  border-left-color: var(--md-primary-fg-color, #64b5f6);
+  box-shadow: 0 0.2rem 0.5rem rgba(0,0,0,.3), 0 0 0.05rem rgba(0,0,0,.4);
+}
+
+[data-md-color-scheme="slate"] blockquote:hover {
+  box-shadow: 0 0.4rem 1rem rgba(0,0,0,.5), 0 0 0.1rem rgba(0,0,0,.6) !important;
+}
+
+[data-md-color-scheme="slate"] blockquote::before {
+  background: linear-gradient(135deg, rgba(100, 181, 246, 0.02) 0%, rgba(100, 181, 246, 0.05) 100%);
+}
+
+/* 自动主题（跟随系统） */
+@media (prefers-color-scheme: dark) {
+  [data-md-color-scheme=""] blockquote {
+    background-color: var(--md-default-bg-color, #1a1a1a);
+    border-left-color: var(--md-primary-fg-color, #64b5f6);
+    box-shadow: 0 0.2rem 0.5rem rgba(0,0,0,.3), 0 0 0.05rem rgba(0,0,0,.4);
+  }
+  
+  [data-md-color-scheme=""] blockquote:hover {
+    box-shadow: 0 0.4rem 1rem rgba(0,0,0,.5), 0 0 0.1rem rgba(0,0,0,.6) !important;
+  }
+  
+  [data-md-color-scheme=""] blockquote::before {
+    background: linear-gradient(135deg, rgba(100, 181, 246, 0.02) 0%, rgba(100, 181, 246, 0.05) 100%);
+  }
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  blockquote {
+    padding: 0.75rem 1rem;
+    margin: 0.75rem 0;
+  }
+  
+  blockquote strong {
+    font-size: 0.75rem;
+  }
+  
+  blockquote p,
+  blockquote li {
+    font-size: 0.65rem;
+  }
+}
