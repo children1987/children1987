@@ -8,7 +8,7 @@
             "name": "mkdocs serve",
             "type": "node-terminal",
             "request": "launch",
-            "command": "pipenv run mkdocs serve",
+            "command": "pipenv run mkdocs serve --dev-addr 0.0.0.0:8000",
             "cwd": "${workspaceFolder}"
         }
     ]
