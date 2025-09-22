@@ -58,7 +58,9 @@ encoded_str = ori_str.encode(encoding='utf-8')
 signature = hashlib.md5(encoded_str).hexdigest()
 ```
 
-*注意*：实现上述算法后，请务必以上文中的例子验证签名算法的正确性。
+> **⚠️ 注意**
+>
+> 实现上述算法后，请务必以上文中的例子验证签名算法的正确性。
 
 ### 通过ProjectSecret认证（不推荐，即将废弃）
 
@@ -133,7 +135,9 @@ response = requests.post(url, data=json.dumps(data), headers=headers)
 print(response.text)
 ```
 
-*注意*：本系统API不限制调用者使用的编程语言，其它编程语言一般也都支持http(s)的调用，这里不再逐一给出样例。
+> **💡 提示**
+>
+> 本系统API不限制调用者使用的编程语言，其它编程语言一般也都支持http(s)的调用，这里不再逐一给出样例。
 
 ## 项目资源API
 

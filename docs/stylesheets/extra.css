@@ -154,6 +154,19 @@ blockquote > *:last-child {
   }
 }
 
+/* 确保引用块中的加粗文本不换行 */
+blockquote p {
+  white-space: normal;
+  word-wrap: break-word;
+}
+
+/* 防止引用块中的 strong 标签独立成行 */
+blockquote strong {
+  display: inline !important;
+  white-space: nowrap;
+  font-size: 0.7rem;
+}
+
 /* 响应式设计 */
 @media (max-width: 768px) {
   blockquote {

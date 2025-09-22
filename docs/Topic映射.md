@@ -10,9 +10,7 @@ Topic映射适用于设备无法自定义MQTT topic的场景，需要将设备�
 
 ![img](Topic映射/docs10Topic映射assetswps2.jpg)
 
-注意：
-
-- 配置映射topic时，“映射topic”必须包含{sn}，它是设备的“序列号”（如下图所示）。
-- 需要使用映射topic的设备，都必须配置序列号。
-
-![img](Topic映射/docs10Topic映射assetswps3.jpg)
+> **⚠️ 注意**
+> 配置映射topic时，"映射topic"必须包含{sn}，它是设备的"序列号"，如下图所示：
+> ![img](Topic映射/docs10Topic映射assetswps3.jpg)
+> 需要使用映射topic的设备，都必须配置序列号。

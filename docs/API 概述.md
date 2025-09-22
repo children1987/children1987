@@ -34,7 +34,9 @@ EZtCloud 的 HTTPS API 为定制开发提供了非常全面的资源访问接口
 - 可读取设备历史数据。
 - 支持设备通信，可向设备下发属性、下发命令、下发自定义数据（支持 JSON /HEX / Plaintext）。
 
-**提示：HTTPS API 面向付费用户开放，详细文档请浏览[HTTPS API](HTTPS API.md)。**
+> **💡 提示**
+>
+> HTTPS API 面向付费用户开放，详细文档请浏览[HTTPS API](HTTPS API.md)。
 
 ### MQTT API
 
