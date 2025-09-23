@@ -83,7 +83,6 @@ nav:
     - 子设备MQTT接入协议: 子设备MQTT接入协议.md
     - 设备TCP接入协议: 设备TCP接入协议.md
     - 设备HTTP接入协议: 设备HTTP接入协议.md
-    - 设备COAP协议接入: 设备COAP协议接入.md
     - 设备通过DTU接入: 设备通过DTU接入.md
 
   - 设备信息调试:
